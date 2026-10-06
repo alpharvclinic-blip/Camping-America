@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campground Map: Thousand Trails, Encore, Passport America</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="vendor/MarkerCluster.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="panel">
+  <h1>Campground Map</h1>
+  <div class="search">
+    <label for="q">Go to a state</label>
+    <div class="field">
+      <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="Type a state, like Texas or TX" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list">
+      <button id="clear" type="button" aria-label="Clear search" hidden>&times;</button>
+    </div>
+    <ul id="sugg" role="listbox" hidden></ul>
+    <p id="msg" class="msg" aria-live="polite"></p>
+  </div>
+  <div class="nets" role="group" aria-label="Campground networks. Click a name to add or remove it.">
+    <button class="net" data-net="tt" aria-pressed="true"><i></i><span>Thousand Trails</span><b></b></button>
+    <button class="net" data-net="en" aria-pressed="true"><i></i><span>Encore</span><b></b></button>
+    <button class="net" data-net="pa" aria-pressed="true"><i></i><span>Passport America</span><b></b></button>
+  </div>
+  <p id="summary" class="summary" aria-live="polite"></p>
+  <button id="reset" type="button" class="reset">Show the whole U.S.</button>
+  <p class="note">Pins sit at the center of each campground&rsquo;s ZIP code, so they can be a few miles off. Open a pin and use &ldquo;Find on Google Maps&rdquo; for the exact spot.</p>
+</aside>
+<main id="map" aria-label="Map of campgrounds"></main>
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/leaflet.markercluster.js"></script>
+<script src="data/campgrounds.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
